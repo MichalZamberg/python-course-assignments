@@ -38,20 +38,18 @@ while True:
         print(f"Move mode {'enabled' if move_mode else 'disabled'}.")
         continue
 
-    try:
-        guess = int(guess)
-        if guess < secret_number:
-            print("Too low. Try again.")
-        elif guess > secret_number:
-            print("Too high. Try again.")
-        else:
-            print("Congratulations! You guessed the number.")
-            secret_number = generate_secret()
-            print("Starting a new game. A new number has been chosen.")
-            continue
-    except ValueError:
-        print("Please enter a valid number, or one of the commands: 'x', 'n', 's', 'd', or 'm'.")
+
+    guess = int(guess)
+    if guess < secret_number:
+        print("Too low. Try again.")
+    elif guess > secret_number:
+        print("Too high. Try again.")
+    else:
+        print("Congratulations! You guessed the number.")
+        secret_number = generate_secret()
+        print("Starting a new game. A new number has been chosen.")
         continue
+
 
     if move_mode:
         shift = random.randint(-2, 2)
