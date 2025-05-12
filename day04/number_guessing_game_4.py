@@ -24,13 +24,13 @@ while True:
         debug_mode = not debug_mode
         print(f"Debug mode {'enabled' if debug_mode else 'disabled'}.")
         continue
-    try:
-        guess = int(guess)
-        if guess < secret_number:
-            print("Try again.")
-        elif guess > secret_number:
-            print("Try again.")
-        else:
-            print("You guessed the number!")
-            break
+
+    guess = int(guess)
+    if guess < secret_number:
+        print("Too low. Try again.")
+    elif guess > secret_number:
+        print("Too high. Try again.")
+    else:
+        print("You guessed the number!")
+        break
 
