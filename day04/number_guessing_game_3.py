@@ -13,13 +13,13 @@ while True:
     elif guess.lower() == 's':
         print(f"(Cheat) The secret number is: {secret_number}")
         continue
-    try:
-        guess = int(guess)
-        if guess < secret_number:
-            print("Try again.")
-        elif guess > secret_number:
-            print("Try again.")
-        else:
-            print("You guessed the number!")
-            break
+        
+    guess = int(guess)
+    if guess < secret_number:
+        print("Too low. Try again.")
+    elif guess > secret_number:
+        print("Too high. Try again.")
+    else:
+        print("You guessed the number!")
+        break
 
